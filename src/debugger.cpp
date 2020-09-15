@@ -3,7 +3,7 @@
 #include <sys/ptrace.h>
 
 #include "debugger.h"
-#include "../submodules/linenoise/linenoise.h"
+#include "linenoise.h"
 #include "helpers.h"
 
 Debugger::Debugger(std::string prog_name, pid_t pid)
