@@ -1,0 +1,9 @@
+[submodule "submodules/--force"]
+	path = submodules/--force
+	url = https://github.com/antirez/linenoise.git
+[submodule "submodules/linenoise"]
+	path = submodules/linenoise
+	url = https://github.com/antirez/linenoise.git
+[submodule "submodules/libelfin"]
+	path = submodules/libelfin
+	url = https://github.com/TartanLlama/libelfin.git

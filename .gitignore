@@ -1,0 +1,11 @@
+.vscode/
+
+# CMake files
+Makefile
+CMakeFiles/
+CMakeCache.txt
+*.cmake
+
+# Binaries
+gdblite
+test
