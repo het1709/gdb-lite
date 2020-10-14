@@ -4,7 +4,7 @@
 #include <errno.h>
 #include <string.h>
 
-#include "debugger.h"
+#include "debugger.hpp"
 
 int main(int argc, char** argv) {
     if (argc < 2) {
@@ -16,7 +16,7 @@ int main(int argc, char** argv) {
 
     if (pid == 0) {
         // we're in the newly created child process
-        // execute debugee (program)
+        // execute debugee (program to be debugged)
         errno = 0; // reset errno since ptrace() sets errno in case of error
 
         // allow the parent process to observe and control the execution of the child process
@@ -29,7 +29,7 @@ int main(int argc, char** argv) {
         }
         execl(program, program, nullptr); // Execute the debugee program with no arguments
     } else if (pid > 0) {
-        // we're in the parent process
+        // we're in the parent process and pid here refers to the pid of the child process
         // execute debugger
         Debugger dbg{program, pid};
         dbg.run();
