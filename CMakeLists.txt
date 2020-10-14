@@ -9,4 +9,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 include_directories(submodules/libelfin submodules/linenoise include)
 
-add_executable(gdblite src/main.cpp src/helpers.cpp src/debugger.cpp submodules/linenoise/linenoise.c)
+file(GLOB gdblite_SRC
+    "src/*.cpp"
+    "submodules/linenoise/linenoise.c"
+)
+
+add_executable(gdblite ${gdblite_SRC})
